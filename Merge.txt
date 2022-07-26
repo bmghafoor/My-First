@@ -1,0 +1,352 @@
+Last login: Tue Jul 26 17:59:03 on console
+bmghafoor@Binyameens-MBP ~ % cd Desktop/SpringBoard/Course/Terminal 
+bmghafoor@Binyameens-MBP Terminal % ls
+Git			Terminal_Answers.zip
+bmghafoor@Binyameens-MBP Terminal % git status
+fatal: not a git repository (or any of the parent directories): .git
+bmghafoor@Binyameens-MBP Terminal % cd Git
+bmghafoor@Binyameens-MBP Git % ls
+app.css		app.js		index.html	learn_git_again
+bmghafoor@Binyameens-MBP Git % git Status
+fatal: cannot handle Status as a builtin
+bmghafoor@Binyameens-MBP Git % git status 
+On branch add-css
+Changes not staged for commit:
+  (use "git add <file>..." to update what will be committed)
+  (use "git restore <file>..." to discard changes in working directory)
+  (commit or discard the untracked or modified content in submodules)
+	modified:   learn_git_again (untracked content)
+
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+	.DS_Store
+
+no changes added to commit (use "git add" and/or "git commit -a")
+bmghafoor@Binyameens-MBP Git % git add .
+bmghafoor@Binyameens-MBP Git % git status
+On branch add-css
+Changes to be committed:
+  (use "git restore --staged <file>..." to unstage)
+	new file:   .DS_Store
+
+Changes not staged for commit:
+  (use "git add <file>..." to update what will be committed)
+  (use "git restore <file>..." to discard changes in working directory)
+  (commit or discard the untracked or modified content in submodules)
+	modified:   learn_git_again (untracked content)
+
+bmghafoor@Binyameens-MBP Git % ls -a
+.		.DS_Store	app.css		index.html
+..		.git		app.js		learn_git_again
+bmghafoor@Binyameens-MBP Git % rm .git .DS_Store
+rm: .git: is a directory
+bmghafoor@Binyameens-MBP Git % rm -rf .git
+bmghafoor@Binyameens-MBP Git % ls -a
+.		app.css		index.html
+..		app.js		learn_git_again
+bmghafoor@Binyameens-MBP Git % ls -a
+.		app.css		index.html
+..		app.js		learn_git_again
+bmghafoor@Binyameens-MBP Git % rm .
+rm: "." and ".." may not be removed
+bmghafoor@Binyameens-MBP Git % git status
+fatal: not a git repository (or any of the parent directories): .git
+bmghafoor@Binyameens-MBP Git % ls
+app.css		app.js		index.html	learn_git_again
+bmghafoor@Binyameens-MBP Git % touch branching.txt
+bmghafoor@Binyameens-MBP Git % open branching.txt 
+bmghafoor@Binyameens-MBP Git % ls
+app.css		app.js		branching.txt	index.html	learn_git_again
+bmghafoor@Binyameens-MBP Git % clear
+
+
+
+bmghafoor@Binyameens-MBP Git % git init
+hint: Using 'master' as the name for the initial branch. This default branch name
+hint: is subject to change. To configure the initial branch name to use in all
+hint: of your new repositories, which will suppress this warning, call:
+hint: 
+hint: 	git config --global init.defaultBranch <name>
+hint: 
+hint: Names commonly chosen instead of 'master' are 'main', 'trunk' and
+hint: 'development'. The just-created branch can be renamed via this command:
+hint: 
+hint: 	git branch -m <name>
+Initialized empty Git repository in /Users/bmghafoor/Desktop/SpringBoard/Course/Terminal/Git/.git/
+bmghafoor@Binyameens-MBP Git % git status
+On branch master
+
+No commits yet
+
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+	app.css
+	app.js
+	branching.txt
+	index.html
+	learn_git_again/
+
+nothing added to commit but untracked files present (use "git add" to track)
+bmghafoor@Binyameens-MBP Git % git add .
+warning: adding embedded git repository: learn_git_again
+hint: You've added another git repository inside your current repository.
+hint: Clones of the outer repository will not contain the contents of
+hint: the embedded repository and will not know how to obtain it.
+hint: If you meant to add a submodule, use:
+hint: 
+hint: 	git submodule add <url> learn_git_again
+hint: 
+hint: If you added this path by mistake, you can remove it from the
+hint: index with:
+hint: 
+hint: 	git rm --cached learn_git_again
+hint: 
+hint: See "git help submodule" for more information.
+bmghafoor@Binyameens-MBP Git % git commit -m 'Setting master branch'
+[master (root-commit) f13d0a9] Setting master branch
+ Committer: Binyameen Ghafoor <bmghafoor@Binyameens-MBP.home>
+Your name and email address were configured automatically based
+on your username and hostname. Please check that they are accurate.
+You can suppress this message by setting them explicitly:
+
+    git config --global user.name "Your Name"
+    git config --global user.email you@example.com
+
+After doing this, you may fix the identity used for this commit with:
+
+    git commit --amend --reset-author
+
+ 5 files changed, 55 insertions(+)
+ create mode 100644 app.css
+ create mode 100644 app.js
+ create mode 100644 branching.txt
+ create mode 100644 index.html
+ create mode 160000 learn_git_again
+bmghafoor@Binyameens-MBP Git % git status
+On branch master
+Changes not staged for commit:
+  (use "git add <file>..." to update what will be committed)
+  (use "git restore <file>..." to discard changes in working directory)
+  (commit or discard the untracked or modified content in submodules)
+	modified:   learn_git_again (untracked content)
+
+no changes added to commit (use "git add" and/or "git commit -a")
+bmghafoor@Binyameens-MBP Git % rm -rf learn_git_again 
+bmghafoor@Binyameens-MBP Git % git status
+On branch master
+Changes not staged for commit:
+  (use "git add/rm <file>..." to update what will be committed)
+  (use "git restore <file>..." to discard changes in working directory)
+	deleted:    learn_git_again
+
+no changes added to commit (use "git add" and/or "git commit -a")
+bmghafoor@Binyameens-MBP Git % git commit -m "removed folder"
+On branch master
+Changes not staged for commit:
+  (use "git add/rm <file>..." to update what will be committed)
+  (use "git restore <file>..." to discard changes in working directory)
+	deleted:    learn_git_again
+
+no changes added to commit (use "git add" and/or "git commit -a")
+bmghafoor@Binyameens-MBP Git % git status
+On branch master
+Changes not staged for commit:
+  (use "git add/rm <file>..." to update what will be committed)
+  (use "git restore <file>..." to discard changes in working directory)
+	deleted:    learn_git_again
+
+no changes added to commit (use "git add" and/or "git commit -a")
+bmghafoor@Binyameens-MBP Git % git add learn_git_again
+bmghafoor@Binyameens-MBP Git % git status
+On branch master
+Changes to be committed:
+  (use "git restore --staged <file>..." to unstage)
+	deleted:    learn_git_again
+
+bmghafoor@Binyameens-MBP Git % git commit -m "Deleted folder"
+[master 82a5293] Deleted folder
+ Committer: Binyameen Ghafoor <bmghafoor@Binyameens-MBP.home>
+Your name and email address were configured automatically based
+on your username and hostname. Please check that they are accurate.
+You can suppress this message by setting them explicitly:
+
+    git config --global user.name "Your Name"
+    git config --global user.email you@example.com
+
+After doing this, you may fix the identity used for this commit with:
+
+    git commit --amend --reset-author
+
+ 1 file changed, 1 deletion(-)
+ delete mode 160000 learn_git_again
+bmghafoor@Binyameens-MBP Git % git status
+On branch master
+nothing to commit, working tree clean
+bmghafoor@Binyameens-MBP Git % clear
+
+bmghafoor@Binyameens-MBP Git % git checkout -b bg_color 
+Switched to a new branch 'bg_color'
+bmghafoor@Binyameens-MBP Git % git status
+On branch bg_color
+Changes not staged for commit:
+  (use "git add <file>..." to update what will be committed)
+  (use "git restore <file>..." to discard changes in working directory)
+	modified:   app.css
+
+no changes added to commit (use "git add" and/or "git commit -a")
+bmghafoor@Binyameens-MBP Git % git add app.css
+bmghafoor@Binyameens-MBP Git % git status
+On branch bg_color
+Changes to be committed:
+  (use "git restore --staged <file>..." to unstage)
+	modified:   app.css
+
+bmghafoor@Binyameens-MBP Git % git commit -m "Changed background color to white"
+[bg_color a45bb32] Changed background color to white
+ Committer: Binyameen Ghafoor <bmghafoor@Binyameens-MBP.home>
+Your name and email address were configured automatically based
+on your username and hostname. Please check that they are accurate.
+You can suppress this message by setting them explicitly:
+
+    git config --global user.name "Your Name"
+    git config --global user.email you@example.com
+
+After doing this, you may fix the identity used for this commit with:
+
+    git commit --amend --reset-author
+
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+bmghafoor@Binyameens-MBP Git % git checkout master
+Switched to branch 'master'
+bmghafoor@Binyameens-MBP Git % git status        
+On branch master
+nothing to commit, working tree clean
+bmghafoor@Binyameens-MBP Git % git log
+commit 82a52939f72cc3c9f33cad72aea0e637e1303709 (HEAD -> master)
+Author: Binyameen Ghafoor <bmghafoor@Binyameens-MBP.home>
+Date:   Tue Jul 26 18:11:12 2022 -0400
+
+    Deleted folder
+
+commit f13d0a986e91433c9ab1968fce7837d68d40fe86
+Author: Binyameen Ghafoor <bmghafoor@Binyameens-MBP.home>
+Date:   Tue Jul 26 18:08:25 2022 -0400
+
+    Setting master branch
+bmghafoor@Binyameens-MBP Git % git branch
+  bg_color
+* master
+bmghafoor@Binyameens-MBP Git % git merge bg_color
+Updating 82a5293..a45bb32
+Fast-forward
+ app.css | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+bmghafoor@Binyameens-MBP Git % git branch -d bg_color
+Deleted branch bg_color (was a45bb32).
+bmghafoor@Binyameens-MBP Git % get checkout -b font_size
+zsh: command not found: get
+bmghafoor@Binyameens-MBP Git % git checkout -b font_size 
+Switched to a new branch 'font_size'
+bmghafoor@Binyameens-MBP Git % git status
+On branch font_size
+Changes not staged for commit:
+  (use "git add <file>..." to update what will be committed)
+  (use "git restore <file>..." to discard changes in working directory)
+	modified:   app.css
+
+no changes added to commit (use "git add" and/or "git commit -a")
+bmghafoor@Binyameens-MBP Git % git add app.css
+bmghafoor@Binyameens-MBP Git % git commit -m "Changed font-size to 10"
+[font_size f39f3a3] Changed font-size to 10
+ Committer: Binyameen Ghafoor <bmghafoor@Binyameens-MBP.home>
+Your name and email address were configured automatically based
+on your username and hostname. Please check that they are accurate.
+You can suppress this message by setting them explicitly:
+
+    git config --global user.name "Your Name"
+    git config --global user.email you@example.com
+
+After doing this, you may fix the identity used for this commit with:
+
+    git commit --amend --reset-author
+
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+bmghafoor@Binyameens-MBP Git % git checkout master
+Switched to branch 'master'
+bmghafoor@Binyameens-MBP Git % git status
+On branch master
+nothing to commit, working tree clean
+bmghafoor@Binyameens-MBP Git % git status
+On branch master
+Changes not staged for commit:
+  (use "git add <file>..." to update what will be committed)
+  (use "git restore <file>..." to discard changes in working directory)
+	modified:   app.css
+
+no changes added to commit (use "git add" and/or "git commit -a")
+bmghafoor@Binyameens-MBP Git % git add app.css
+bmghafoor@Binyameens-MBP Git % git commit -m "Changed Font size to 20"
+[master c7c6478] Changed Font size to 20
+ Committer: Binyameen Ghafoor <bmghafoor@Binyameens-MBP.home>
+Your name and email address were configured automatically based
+on your username and hostname. Please check that they are accurate.
+You can suppress this message by setting them explicitly:
+
+    git config --global user.name "Your Name"
+    git config --global user.email you@example.com
+
+After doing this, you may fix the identity used for this commit with:
+
+    git commit --amend --reset-author
+
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+bmghafoor@Binyameens-MBP Git % git status
+On branch master
+nothing to commit, working tree clean
+bmghafoor@Binyameens-MBP Git % git merge font_size
+Auto-merging app.css
+CONFLICT (content): Merge conflict in app.css
+Automatic merge failed; fix conflicts and then commit the result.
+bmghafoor@Binyameens-MBP Git % git merge font_size
+error: Merging is not possible because you have unmerged files.
+hint: Fix them up in the work tree, and then use 'git add/rm <file>'
+hint: as appropriate to mark resolution and make a commit.
+fatal: Exiting because of an unresolved conflict.
+bmghafoor@Binyameens-MBP Git % git status
+On branch master
+You have unmerged paths.
+  (fix conflicts and run "git commit")
+  (use "git merge --abort" to abort the merge)
+
+Unmerged paths:
+  (use "git add <file>..." to mark resolution)
+	both modified:   app.css
+
+no changes added to commit (use "git add" and/or "git commit -a")
+bmghafoor@Binyameens-MBP Git % git add .                         
+bmghafoor@Binyameens-MBP Git % git status
+On branch master
+All conflicts fixed but you are still merging.
+  (use "git commit" to conclude merge)
+
+bmghafoor@Binyameens-MBP Git % git commit -m "Merged"
+[master 87c359b] Merged
+ Committer: Binyameen Ghafoor <bmghafoor@Binyameens-MBP.home>
+Your name and email address were configured automatically based
+on your username and hostname. Please check that they are accurate.
+You can suppress this message by setting them explicitly:
+
+    git config --global user.name "Your Name"
+    git config --global user.email you@example.com
+
+After doing this, you may fix the identity used for this commit with:
+
+    git commit --amend --reset-author
+
+bmghafoor@Binyameens-MBP Git % git status
+On branch master
+nothing to commit, working tree clean
+bmghafoor@Binyameens-MBP Git % ls
+app.css		app.js		branching.txt	index.html
+bmghafoor@Binyameens-MBP Git % touch Merge.txt
+bmghafoor@Binyameens-MBP Git % 
