@@ -1,0 +1,5 @@
+1. git checkout -b NAME
+2. 
+3. git checkout
+4. Git branch -d/D NAME
+5. When changes are committed to a file from two different branches
